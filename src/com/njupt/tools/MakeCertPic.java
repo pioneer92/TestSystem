@@ -20,11 +20,8 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-/*鐢熸垚楠岃瘉鐮佸浘鐗�
- */
 public class MakeCertPic {
 
-    //楠岃瘉鐮佸浘鐗囦腑鍙互鍑虹幇鐨勫瓧绗﹂泦锛屽彲浠ユ牴鎹渶瑕佷慨鏀�
     private char mapTable[] = {
         'a', 'b', 'c', 'd', 'e', 'f',
         'g', 'h', 'i', 'j', 'k', 'l',
@@ -42,12 +39,9 @@ public class MakeCertPic {
             height = 20;
         }
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        //鑾峰彇鍥惧舰涓婁笅鏂�
         Graphics g = image.getGraphics();
-        //璁惧畾鑳屾櫙棰滆壊
         g.setColor(new Color(0xDCDCDC));
         g.fillRect(0, 0, width, height);
-        //鐢昏竟妗�
         g.setColor(Color.black);
         g.drawRect(0, 0, width - 1, height - 1);
         //闅忔満浜х敓鐨勯獙璇佺爜
