@@ -37,14 +37,27 @@ public class LoginCl extends HttpServlet {
 		// TODO Auto-generated method stub
 		String stuid = request.getParameter("stuid");
 		String password = request.getParameter("password");
+		String certCode=request.getParameter("certCode");
 		HttpSession httpSession=request.getSession();
+		String code=(String) httpSession.getAttribute("certCode");
 		if (stuid==null || stuid.equals("")) {	//用户名为空，返回重新登录
 			request.setAttribute("info", "学号不能为空");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
+			return;
 		} else if (password==null || password.equals("")) {		//密码为空，返回重新登录
 			request.setAttribute("info", "密码不能为空");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
-		} else {			//用户名和密码验证		
+			return;
+		} else {			//用户名和密码验证	
+			if (certCode==null || certCode.equals("")) {
+				request.setAttribute("info", "验证码不能为空");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+				return;
+			} else if(!code.equals(certCode)) {
+				request.setAttribute("info", "验证码不正确");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+				return;
+			}	
 			StudentBeanBO studentBeanBO=new StudentBeanBO();
 			int check=studentBeanBO.checkUser(stuid, password);
 			switch (check) {

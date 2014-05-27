@@ -93,14 +93,14 @@
 			<td align="center"><hr /></td>
 		</tr>
 		<tr>
-			<td height="40" align="center"><a href="help.jsp" target="EDIT">系统简介</a></td>
+			<td height="30" align="center"><a href="help.jsp" target="EDIT">系统简介</a></td>
 		</tr>
 		<tr>
-			<td height="40" align="center"><a href="queryGrade.jsp"
+			<td height="30" align="center"><a href="queryGrade.jsp"
 				target="EDIT">成绩查询</a></td>
 		</tr>
 		<tr>
-			<td height="40" align="center"><div align="center" id="mytime"
+			<td height="30" align="center"><div align="center" id="mytime"
 					onload="setInterval('showTime()',1000)"></div></td>
 		</tr>
 	</table>
